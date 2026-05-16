@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #0a0a0a;
+    --surface: #111111;
+    --surface2: #1a1a1a;
+    --border: #2a2a2a;
+    --accent: #22c55e;
+    --accent-dim: #15803d;
+    --text: #f5f5f5;
+    --text-muted: #737373;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --info: #3b82f6;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    margin: 0;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--surface); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-green-500 hover:bg-green-600 text-black font-semibold px-4 py-2 rounded-lg transition-all duration-150 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply bg-transparent hover:bg-white/5 text-neutral-300 font-medium px-4 py-2 rounded-lg transition-all duration-150 flex items-center gap-2;
+  }
+  .btn-danger {
+    @apply bg-red-500/10 hover:bg-red-500/20 text-red-400 font-medium px-4 py-2 rounded-lg transition-all duration-150 flex items-center gap-2;
+  }
+  .input {
+    @apply w-full bg-[#1a1a1a] border border-[#2a2a2a] text-white rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-green-500 transition-colors placeholder:text-neutral-600;
+  }
+  .card {
+    @apply bg-[#111111] border border-[#2a2a2a] rounded-xl;
+  }
+  .badge-todo { @apply bg-neutral-800 text-neutral-300 text-xs font-mono px-2 py-0.5 rounded-md; }
+  .badge-in_progress { @apply bg-blue-500/20 text-blue-400 text-xs font-mono px-2 py-0.5 rounded-md; }
+  .badge-in_review { @apply bg-yellow-500/20 text-yellow-400 text-xs font-mono px-2 py-0.5 rounded-md; }
+  .badge-done { @apply bg-green-500/20 text-green-400 text-xs font-mono px-2 py-0.5 rounded-md; }
+  .badge-low { @apply bg-neutral-800 text-neutral-400 text-xs font-mono px-2 py-0.5 rounded-md; }
+  .badge-medium { @apply bg-blue-500/20 text-blue-400 text-xs font-mono px-2 py-0.5 rounded-md; }
+  .badge-high { @apply bg-orange-500/20 text-orange-400 text-xs font-mono px-2 py-0.5 rounded-md; }
+  .badge-urgent { @apply bg-red-500/20 text-red-400 text-xs font-mono px-2 py-0.5 rounded-md; }
+}
