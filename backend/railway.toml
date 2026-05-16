@@ -3,7 +3,5 @@ builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile"
 
 [deploy]
-healthcheckPath = "/health" # Ensure this matches your Spring/Java health endpoint
-healthcheckTimeout = 100
 restartPolicyType = "ON_FAILURE"
 maxRestartCount = 10
